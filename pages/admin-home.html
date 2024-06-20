@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+   <link rel="icon" href="/assets/logo.png">
+   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <style>
+      .list.active {
+         color: #ff0000;
+      }
+
+      .list.active:hover {
+         text-decoration: underline;
+      }
+   </style>
+
+   <title>Admin Home</title>
+</head>
+
+<body>
+
+   <!-- NAVBAR SECTION STARTED -->
+   <nav class="bg-white border border-gray-200 px-5" style="font-family: 'Manrope', sans-serif;">
+      <div class="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
+         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/assets/logo.png" class="h-8" alt="Logo" />
+            <span class="self-center text-xl font-extrabold whitespace-nowrap text-red-500">Admin Home</span>
+         </a>
+         <button data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+         </button>
+         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+               class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+               <li>
+                  <a href="#"
+                     class="block py-2 px-3 text-white bg-red-500 rounded md:bg-transparent md:text-red-500 md:p-0 underline"
+                     aria-current="page">Home</a>
+               </li>
+               <li>
+                  <a href="admin-create-article.html"
+                     class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0">Create
+                     Article</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <!-- NAVBAR SECTION ENDED -->
+
+   <!-- HERO SECTION STARTED -->
+   <section class="bg-gray-50 px-5" style="font-family: 'Manrope', sans-serif;">
+      <div class="py-4 mx-auto max-w-screen-lg text-center lg:py-12 px-4">
+         <h1 class="mb-5 text-4xl font-extrabold leading-none text-gray-900 md:text-5xl lg:text-6xl text-red-500">
+            Manage Your Article's Here...</h1>
+         <p class="mb-8 text-md font-medium text-gray-500 sm:px-16 max-w-screen-sm mx-auto">
+            As an admin you have a privilege to add, edit or delete an article for a user, so here it is, create and
+            share more!</p>
+      </div>
+   </section>
+   <!-- HERO SECTION ENDED -->
+
+   <!-- CATEGORY ARTICLE SECTION STARTED -->
+   <section class="bg-gray-50 pb-2 px-5" style="font-family: 'Manrope', sans-serif;">
+      <div class="max-w-screen-lg mx-auto px-4">
+         <h2 class="text-4xl pb-2">Category</h2>
+         <hr>
+         <ul class="list-none flex flex-row gap-5 pt-2">
+            <li data-filter="All"
+               class="list active cursor-pointer focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
+               All
+            </li>
+            <li data-filter="tech"
+               class="list cursor-pointer hover:underline focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
+               Tech
+            </li>
+            <li data-filter="home"
+               class="list cursor-pointer hover:underline focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
+               Home & Garden
+            </li>
+            <li data-filter="auto"
+               class="list cursor-pointer hover:underline focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
+               Auto
+            </li>
+         </ul>
+      </div>
+   </section>
+   <!-- CATEGORY ARTICLE SECTION ENDED -->
+
+   <!-- ARTICLE SECTION STARTED -->
+   <section class="bg-gray-50 pt-10 px-5" style="font-family: 'Manrope', sans-serif;">
+      <div class="max-w-screen-lg mx-auto px-4">
+         <h1 class="text-4xl pb-2">Your Article</h1>
+         <hr>
+         <div id="display-article" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-4 gap-3">
+         </div>
+      </div>
+   </section>
+   <!-- ARTICLE SECTION ENDED -->
+
+   <!-- FOOTER SECTION STARTED -->
+   <footer class="bg-gray-50">
+      <div class="mx-auto w-full max-w-screen-lg p-4 py-6 lg:py-8">
+         <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+         <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="#" class="hover:underline">How It's
+                  Work™</a>. All Rights Reserved.
+            </span>
+         </div>
+      </div>
+   </footer>
+   <!-- FOOTER SECTION ENDED -->
+
+   <script>
+      // Fungsi ini akan dijalankan saat dokumen HTML telah sepenuhnya dimuat
+      $(document).ready(function () {
+         // Ketika elemen dengan kelas 'list' diklik
+         $('.list').click(function () {
+            // Mengambil nilai dari atribut 'data-filter' pada elemen yang diklik
+            const value = $(this).attr('data-filter');
+
+            // Jika nilai adalah 'All'
+            if (value == 'All') {
+               // Tampilkan semua elemen dengan kelas 'itemBox' dengan efek durasi 1000ms
+               $('.itemBox').show('1000')
+            } else {
+               // Sembunyikan semua elemen dengan kelas 'itemBox' terlebih dahulu
+               $('.itemBox').hide();
+               // Tampilkan hanya elemen dengan kelas 'itemBox' yang sesuai dengan nilai 'data-filter', dengan efek durasi 1000ms
+               $('.itemBox.' + value).show('1000');
+            }
+
+            // Tambahkan kelas 'active' ke elemen yang diklik dan hapus kelas 'active' dari saudara-saudaranya
+            $(this).addClass('active').siblings().removeClass('active');
+         })
+      });
+   </script>
+
+   <script type="module" src="/database-config.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>

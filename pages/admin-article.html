@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+   <link rel="icon" href="/assets/logo.png">
+   <title>Admin Article</title>
+</head>
+
+<body>
+   <!-- NAVBAR SECTION STARTED -->
+   <nav class="bg-white border border-gray-200" style="font-family: 'Manrope', sans-serif;">
+      <div class="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
+         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/assets/logo.png" class="h-8" alt="Logo" />
+            <span class="self-center text-xl font-extrabold whitespace-nowrap text-red-500">Admin Home</span>
+         </a>
+         <button data-collapse-toggle="navbar-default" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            aria-controls="navbar-default" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+            </svg>
+         </button>
+         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul
+               class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+               <li>
+                  <a href="admin-home.html"
+                     class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0"
+                     aria-current="page">Home</a>
+               </li>
+               <li>
+                  <a href="admin-create-article.html"
+                     class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0">Create
+                     Article</a>
+               </li>
+               <li>
+                  <a id="edit-article" href=""
+                     class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-500 md:p-0">Edit
+                     This Article</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <!-- NAVBAR SECTION ENDED -->
+
+   <!-- ARTICLE CONTENT SECTION STARTED -->
+   <section class="bg-gray-50 px-5" style="font-family: 'Manrope', sans-serif;">
+      <div class="max-w-screen-lg mx-auto px-4 pt-2 md:pt-20 lg:pt-24">
+         <h1 id="article-title" class="text-2xl lg:text-5xl py-8"></h1>
+         <div class="gap-4">
+            <p id="article-category" class="text-gray-800 italic pb-3"></p>
+            <p id="article-created-at" class="text-gray-800 pb-3"></p>
+         </div>
+         <img id="article-image" src="" alt="" class="rounded-md object-cover w-full h-full pb-6">
+         <article id="article-content" class="format format-sm sm:format-base lg:format-lg tracking-wider">
+         </article>
+      </div>
+   </section>
+   <!-- ARTICLE CONTENT SECTION ENDED -->
+
+   <!-- FOOTER SECTION STARTED -->
+   <footer class="bg-gray-50">
+      <div class="mx-auto w-full max-w-screen-lg p-4 py-6 lg:py-8">
+         <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+         <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="#" class="hover:underline">How It's
+                  Work™</a>. All Rights Reserved.
+            </span>
+         </div>
+      </div>
+   </footer>
+   <!-- FOOTER SECTION ENDED -->
+
+   <script type="module" src="/database-config.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>

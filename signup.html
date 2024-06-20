@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+   <link rel="icon" href="/assets/logo.png">
+   <title>Admin Signup</title>
+</head>
+
+<body>
+   <section class="bg-gray-500" style="font-family: 'Manrope', sans-serif;">
+      <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+         <a href="#" class="flex mb-6 text-2xl font-semibold text-white">
+            Admin Signup
+         </a>
+         <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+               <h1 class="text-2xl font-bold leading-tight tracking-tight text-black md:text-2xl">
+                  Create an account
+               </h1>
+               <form class="space-y-4 md:space-y-6" action="#">
+                  <div>
+                     <label for="email" class="block mb-2 text-sm font-medium text-black">Your
+                        email</label>
+                     <input type="email" name="email" id="admin-create-email"
+                        class="bg-gray-50 border border-gray-200 text-black sm:text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5"
+                        placeholder="name@company.com" required="">
+                  </div>
+                  <div>
+                     <label for="password" class="block mb-2 text-sm font-medium text-black">Password</label>
+                     <input type="password" name="password" id="admin-create-password" placeholder="••••••••"
+                        class="bg-gray-50 border border-gray-200 text-black sm:text-sm rounded-lg focus:ring-red-600 focus:border-red-600 block w-full p-2.5"
+                        required="">
+                  </div>
+                  <!-- <div>
+                          <label for="confirm-password"
+                              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm
+                              password</label>
+                          <input type="confirm-password" name="confirm-password" id="confirm-password"
+                              placeholder="••••••••"
+                              class="bg-gray-50 border border-gray-200 text-black sm:text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5"
+                              required="">
+                      </div> -->
+                  <div class="flex items-start">
+                     <div class="flex items-center h-5">
+                        <input id="terms" aria-describedby="terms" type="checkbox"
+                           class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-red-300"
+                           required="">
+                     </div>
+                     <div class="ml-3 text-sm">
+                        <label for="terms" class="font-light text-gray-500">I accept the <a
+                              class="font-light text-red-600 hover:underline" href="#">Terms and
+                              Conditions</a></label>
+                     </div>
+                  </div>
+                  <button type="submit" id="signup-account-btn"
+                     class="w-full text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Create
+                     an account</button>
+                  <p class="text-sm font-light text-gray-500">
+                     Already have an account? <a href="index.html"
+                        class="font-medium text-red-600 hover:underline">Login
+                        here</a>
+                  </p>
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <script type="module" src="database-config.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>
