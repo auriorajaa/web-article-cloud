@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const createArticle = async () => {
       // Mendapatkan file gambar yang diunggah
       const imageFile = articleImageInput.files[0];
-
+``
       // Jika input tidak terisi maka tampilkan pesan error 
       if (!imageFile || !articleTitleInput.value || !articleCategoryInput.value || !articleContentInput.value) {
          alert("Please fill out all fields");
