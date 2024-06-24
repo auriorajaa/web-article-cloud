@@ -1,7 +1,7 @@
 // Import fungsi yang dibutuhkan dan dipakai
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getStorage, uploadBytes, getDownloadURL, ref as storageRef, deleteObject } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 import { getDatabase, set, get, update, remove, push, ref as databaseRef, child, onValue, orderByChild } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
    const createArticle = async () => {
       // Mendapatkan file gambar yang diunggah
       const imageFile = articleImageInput.files[0];
-``
+      ``
       // Jika input tidak terisi maka tampilkan pesan error 
       if (!imageFile || !articleTitleInput.value || !articleCategoryInput.value || !articleContentInput.value) {
          alert("Please fill out all fields");
@@ -424,3 +424,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
    });
 })
+
+// FUNGSI FORGOT PASSWORD
+document.addEventListener("DOMContentLoaded", () => {
+   const emailInput = document.querySelector("#admin-login-email");
+   const forgotPasswordButton = document.querySelector("#sendPasswordResetEmail");
+
+   function forgotPassword() {
+      sendPasswordResetEmail(auth, emailInput.value)
+         .then(() => {
+            alert(`Password reset email sent successfully! to ${emailInput.value}`);
+         })
+         .catch((error) => {
+            alert("Failed to send password reset email. Please input the correct email address.");
+         });
+   }
+
+   forgotPasswordButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      forgotPassword();
+   });
+
+});
