@@ -48,8 +48,7 @@
             <ul
                class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
                <li>
-                  <a href="#"
-                     class="block py-2 px-3 text-gray-900 rounded md:bg-transparent md:p-0 underline"
+                  <a href="#" class="block py-2 px-3 text-gray-900 rounded md:bg-transparent md:p-0 underline"
                      aria-current="page">Home</a>
                </li>
                <li>
@@ -82,24 +81,22 @@
    <!-- CATEGORY ARTICLE SECTION STARTED -->
    <section class="bg-gray-50 pb-2 px-5" style="font-family: 'Manrope', sans-serif;">
       <div class="max-w-screen-lg mx-auto px-4">
-         <h2 class="text-4xl pb-2">Category</h2>
+         <div class="flex justify-between items-center">
+            <h2 class="text-4xl pb-2">Category</h2>
+            <div class="flex items-center">
+               <input type="text" id="new-category" placeholder="Add new category"
+                  class="border-none rounded-md p-2 text-gray-700 ring-red-600 focus:ring-red-600" />
+               <button id="add-category-btn"
+                  class="ml-2 text-black hover:underline hover:text-red-500 px-3 py-2 rounded-md">
+                  Add Category
+               </button>
+            </div>
+         </div>
          <hr>
-         <ul class="list-none flex flex-row gap-5 pt-2">
-            <li data-filter="All"
-               class="list active cursor-pointer focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
+         <ul id="category-list" class="list-none flex flex-row gap-5 pt-2">
+            <li data-filter="all"
+               class="list active cursor-pointer focus:outline-none focus:ring-4 font-medium text-md py-2">
                All
-            </li>
-            <li data-filter="tech"
-               class="list cursor-pointer hover:underline focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
-               Tech
-            </li>
-            <li data-filter="home"
-               class="list cursor-pointer hover:underline focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
-               Home & Garden
-            </li>
-            <li data-filter="auto"
-               class="list cursor-pointer hover:underline focus:outline-none focus:ring-4 focus:ring-green-300 font-medium text-md py-2">
-               Auto
             </li>
          </ul>
       </div>
@@ -131,17 +128,16 @@
    <!-- FOOTER SECTION ENDED -->
 
    <script>
-      // Fungsi ini akan dijalankan saat dokumen HTML telah sepenuhnya dimuat
       $(document).ready(function () {
-         // Ketika elemen dengan kelas 'list' diklik
-         $('.list').click(function () {
+         // Menggunakan delegasi event untuk elemen yang dibuat secara dinamis
+         $('#category-list').on('click', '.list', function () {
             // Mengambil nilai dari atribut 'data-filter' pada elemen yang diklik
             const value = $(this).attr('data-filter');
 
-            // Jika nilai adalah 'All'
-            if (value == 'All') {
+            // Jika nilai adalah 'all'
+            if (value === 'all') {
                // Tampilkan semua elemen dengan kelas 'itemBox' dengan efek durasi 1000ms
-               $('.itemBox').show('1000')
+               $('.itemBox').show('1000');
             } else {
                // Sembunyikan semua elemen dengan kelas 'itemBox' terlebih dahulu
                $('.itemBox').hide();
@@ -151,7 +147,7 @@
 
             // Tambahkan kelas 'active' ke elemen yang diklik dan hapus kelas 'active' dari saudara-saudaranya
             $(this).addClass('active').siblings().removeClass('active');
-         })
+         });
       });
    </script>
 
